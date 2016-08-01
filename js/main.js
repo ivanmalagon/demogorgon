@@ -217,10 +217,10 @@ $(document).ready(function () {
       if (successful) {
         $('.copy-button').text('Copied!');
       } else {
-        $('.copy-button').text('Oops! Try it manually');
+        $('.copy-button').text('Oops! Copy it manually');
       }
     } catch (err) {
-      $('.copy-button').text('Oops! Try it manually');
+      $('.copy-button').text('Oops! Copy it manually');
     }
   });
 
