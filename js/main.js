@@ -111,6 +111,8 @@ var theUrl;
 
 var lightBulb = function (lettersArray) {
   if (lettersArray.length === 0) {
+    $(".pink-bulb, .white-bulb, .yellow-bulb, .blue-bulb, .green-bulb").css('top', '-500px');
+    showElement($('.post-message-buttons'));
     return;
   }
   var letter = lettersArray.shift();
@@ -207,7 +209,7 @@ $(document).ready(function () {
     $('#url')[0].value = url;
   });
 
-  $('button').bind('click', function (evt) {
+  $('.copy-button').bind('click', function (evt) {
     $('#url')[0].select();
 
     try {
@@ -221,6 +223,14 @@ $(document).ready(function () {
       $('.copy-button').text('Oops! Try it manually');
     }
   });
+
+  $('.again').bind('click', function (evt) {
+    window.location.reload();
+  });  
+
+  $('.your-own').bind('click', function (evt) {
+    window.location = window.location.origin + window.location.pathname;
+  });  
 
   if (queryString) {
     queryString = queryString.substring(1);
